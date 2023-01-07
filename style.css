@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    min-height: 100vh;
+    background: var(--Very-dark-blue);
+    font-size: 15px;
+    font-family: "Lexend Deca", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    line-height: 1.5rem;
+}
+:root{
+    --Very-dark-blue: hsl(233, 47%, 7%);
+    --Dark-desaturated-blue: hsl(244, 38%, 16%);
+    --Soft-violet: hsl(277, 64%, 61%);
+    --White: hsl(0, 0%, 100%);
+    --Slightly-transparent-white-mainpara: hsla(0, 0%, 100%, 0.75);
+    --Slightly-transparent-white-statheading: hsla(0, 0%, 100%, 0.6);
+}
+.attribution {
+  font-size: 14px;
+  text-align: center;
+  color: white;
+  margin-top: 1.5rem;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+.container{
+    /* border: 3px solid red; */
+}
+.grid-container{
+    margin: 0 auto;
+    /* border: 1px solid white; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1000px;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+
+}
+.insights{
+    background-color: var(--Dark-desaturated-blue);
+    color: white;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+}
+.inner-div{
+    text-align: center;
+}
+.flex-box{
+    display: flex;
+    gap: 3rem;
+    margin-top: 5rem;
+}
+h2{
+    margin-bottom: 2rem;
+    font-weight: 700;
+}
+span{
+    color: var(--Soft-violet);
+}
+p{
+    color: var(--Slightly-transparent-white-mainpara);
+}
+img{
+    height: 100%;
+    width: 100%; 
+}
+.picture{
+    position: relative;
+}
+.picture::after{
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background: var(--Soft-violet);
+    opacity: 60%;
+    z-index: 99;
+
+}
+@media only screen and (max-width: 800px){
+    .grid-container{
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr;
+        grid-template-areas: 
+        "picture"
+        "insights"
+    }
+    .picture{
+        grid-area: picture;
+    }
+    .insights{
+        grid-area: insights;
+    }
+    .flex-box{
+        flex-direction: column;
+        text-align: center;
+    }
+    .container{
+        height: 100vh;
+    }
+   .attribution{
+    /* display: none; */
+    margin-top: 13rem;
+    text-align: center;
+   }
+   p{
+    font-size: 13px;
+   }
+}
